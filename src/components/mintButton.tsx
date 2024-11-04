@@ -98,6 +98,10 @@ export default function MintButton() {
       console.log(
         `View on explorer: https://solana.fm/tx/${transactionSignature}?cluster=devnet-alpha`
       );
+
+      alert(
+        `View on explorer: https://solana.fm/tx/${transactionSignature}?cluster=devnet-alpha`
+      );
     } catch (error) {
       console.log(error);
     } finally {
