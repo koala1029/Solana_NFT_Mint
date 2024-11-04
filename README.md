@@ -1,4 +1,4 @@
-# React + TypeScript + Vite + Solana Wallet Adapter
+# Solana NFT Minting Site
 Solana NFT Mint. 
 
 ## Setup and run
