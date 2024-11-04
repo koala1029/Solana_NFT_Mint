@@ -1,5 +1,5 @@
 # React + TypeScript + Vite + Solana Wallet Adapter
-Vite TS template with Solana Wallet Adapter added. 
+Solana NFT Mint. 
 
 ## Setup and run
 ```sh
@@ -44,19 +44,4 @@ const Counter: FC = () => {
 }
 
 export default Counter
-```
-
-Now you can use it in the `App.tsx` file:
-
-```tsx
-import Counter from './components/Counter'
-
-function App() {
-  return (
-    <div>
-      <h1>Hello Vite + React!</h1>
-      <Counter />
-    </div>
-  )
-}
 ```
