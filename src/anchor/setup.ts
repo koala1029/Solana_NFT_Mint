@@ -1,7 +1,6 @@
 import { Program } from "@coral-xyz/anchor";
 import { IDL, MintNFT } from "./idl";
 import { clusterApiUrl, Connection, PublicKey } from "@solana/web3.js";
-import { MPL_TOKEN_METADATA_PROGRAM_ID } from "@metaplex-foundation/mpl-token-metadata";
 
 const programId = new PublicKey("Aq3BJbaCtNTinYS2YWtzWyADX9oY5SXRP6MFu8JzRZy3");
 
@@ -13,7 +12,9 @@ export const program = new Program<MintNFT>(IDL, programId, {
   connection,
 });
 
-export const METADATA_PROGRAM_ID = new PublicKey(MPL_TOKEN_METADATA_PROGRAM_ID);
+export const METADATA_PROGRAM_ID = new PublicKey(
+  "metaqbxxUerdq28cj1RbAWkYQm3ybzjb6a8bt518x1s"
+);
 // Derive a PDA for the counter account, using "counter" as the seed.
 // We'll use this to update the counter on-chain.
 export const [vaultPDA] = PublicKey.findProgramAddressSync(

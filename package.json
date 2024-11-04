@@ -13,7 +13,6 @@
     "@coral-xyz/anchor": "^0.29.0",
     "@esbuild-plugins/node-globals-polyfill": "^0.2.3",
     "@esbuild-plugins/node-modules-polyfill": "^0.2.2",
-    "@metaplex-foundation/mpl-token-metadata": "^3.2.1",
     "@solana/spl-token": "^0.4.9",
     "@solana/wallet-adapter-base": "^0.9.23",
     "@solana/wallet-adapter-react": "^0.15.35",

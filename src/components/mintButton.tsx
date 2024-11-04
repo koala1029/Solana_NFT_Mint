@@ -10,21 +10,16 @@ import {
   getNFTMintedCount,
   getNftPDA,
   INSTRUCTIONS_SYSVAR_ID,
+  METADATA_PROGRAM_ID,
   program,
   vaultPDA,
 } from "../anchor/setup";
-import {
-  Keypair,
-  PublicKey,
-  Transaction,
-  SystemProgram,
-} from "@solana/web3.js";
+import { Keypair, Transaction, SystemProgram } from "@solana/web3.js";
 import {
   ASSOCIATED_TOKEN_PROGRAM_ID,
   TOKEN_PROGRAM_ID,
   getAssociatedTokenAddress,
 } from "@solana/spl-token";
-import { MPL_TOKEN_METADATA_PROGRAM_ID } from "@metaplex-foundation/mpl-token-metadata";
 import { BN } from "@coral-xyz/anchor";
 export default function MintButton() {
   const { publicKey, sendTransaction } = useWallet();
@@ -43,13 +38,9 @@ export default function MintButton() {
       console.log("status", id.toString(), status);
     } while (status == true);
 
-    const METADATA_PROGRAM_ID = new PublicKey(MPL_TOKEN_METADATA_PROGRAM_ID);
+    // const METADATA_PROGRAM_ID = new PublicKey(MPL_TOKEN_METADATA_PROGRAM_ID);
     setIsLoading(true);
     try {
-      console.log(
-        "MPL_TOKEN_METADATA_PROGRAM_ID",
-        MPL_TOKEN_METADATA_PROGRAM_ID
-      );
       const mintKeyPair = Keypair.generate();
       const mint = mintKeyPair.publicKey;
       const destination = await getAssociatedTokenAddress(
@@ -57,7 +48,6 @@ export default function MintButton() {
         publicKey
       );
       console.log(">>>", mintKeyPair.publicKey.toString());
-      console.log(">>>", mintKeyPair.publicKey.toBase58());
 
       // Create a transaction to invoke the increment function
       const mintTransaction = await program.methods
