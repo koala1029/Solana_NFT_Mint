@@ -33,7 +33,7 @@ export default function MintButton() {
     let status = false;
     if ((await getNFTMintedCount()) == 500) return;
     do {
-      id = new BN(Math.floor(Math.random() * 1000));
+      id = new BN(Math.floor(Math.random() * 500));
       status = await checkPDAExists(connection, getNftPDA(new BN(id)));
       console.log("status", id.toString(), status);
     } while (status == true);
