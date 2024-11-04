@@ -1,7 +1,9 @@
-# React + TypeScript + Vite + Solana Wallet Adapter
-Vite TS template with Solana Wallet Adapter added. 
+# Solana NFT Minting Site
+
+Solana NFT Mint.
 
 ## Setup and run
+
 ```sh
 yarn
 yarn dev
@@ -30,33 +32,18 @@ This will make hot reloads faster but they won't work on WSL.
 Create a new file in the `src/components` directory and add the following code:
 
 ```tsx
-import { FC, useState } from 'react'
+import { FC, useState } from "react";
 
 const Counter: FC = () => {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
   return (
     <div>
       <p>You clicked {count} times</p>
       <button onClick={() => setCount(count + 1)}>Click me</button>
     </div>
-  )
-}
+  );
+};
 
-export default Counter
-```
-
-Now you can use it in the `App.tsx` file:
-
-```tsx
-import Counter from './components/Counter'
-
-function App() {
-  return (
-    <div>
-      <h1>Hello Vite + React!</h1>
-      <Counter />
-    </div>
-  )
-}
+export default Counter;
 ```
