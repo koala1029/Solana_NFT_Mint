@@ -86,7 +86,7 @@ export default function MintButton() {
         .transaction();
       const transaction = new Transaction();
       transaction.add(...mintTransaction.instructions);
-      transaction.add(...verifyTransaction.instructions);
+      // transaction.add(...verifyTransaction.instructions);
       // return;
       const transactionSignature = await sendTransaction(
         transaction,
