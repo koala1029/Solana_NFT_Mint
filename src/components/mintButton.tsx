@@ -69,21 +69,21 @@ export default function MintButton() {
           tokenMetadataProgram: METADATA_PROGRAM_ID,
         })
         .transaction();
-      const verifyTransaction = await program.methods
-        .verifyCollection() // This takes no arguments so we don't need to pass anything
-        .accounts({
-          authority: publicKey,
-          metadata: getMetadataPDA(mint),
-          mint,
-          mintAuthority: authorityPDA,
-          collectionMint,
-          collectionMetadata: getMetadataPDA(collectionMint),
-          collectionMasterEdition: getMetadataEditionPDA(collectionMint),
-          systemProgram: SystemProgram.programId,
-          sysvarInstruction: INSTRUCTIONS_SYSVAR_ID,
-          tokenMetadataProgram: METADATA_PROGRAM_ID,
-        })
-        .transaction();
+      // const verifyTransaction = await program.methods
+      //   .verifyCollection() // This takes no arguments so we don't need to pass anything
+      //   .accounts({
+      //     authority: publicKey,
+      //     metadata: getMetadataPDA(mint),
+      //     mint,
+      //     mintAuthority: authorityPDA,
+      //     collectionMint,
+      //     collectionMetadata: getMetadataPDA(collectionMint),
+      //     collectionMasterEdition: getMetadataEditionPDA(collectionMint),
+      //     systemProgram: SystemProgram.programId,
+      //     sysvarInstruction: INSTRUCTIONS_SYSVAR_ID,
+      //     tokenMetadataProgram: METADATA_PROGRAM_ID,
+      //   })
+      //   .transaction();
       const transaction = new Transaction();
       transaction.add(...mintTransaction.instructions);
       // transaction.add(...verifyTransaction.instructions);
